@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:02.863Z",
+  "service": "9047",
+  "name": "TikTok Followers [Refill: No] [Max: 500K] [Start Time: 0 - 2 Hrs] [Speed: 30K/Day] 💧",
+  "type": "Default",
+  "rate": "1.25",
+  "min": "60",
+  "max": "100000",
+  "dripfeed": true,
+  "refill": false,
+  "cancel": false,
+  "category": "Tiktok Followers"
+}

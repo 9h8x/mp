@@ -1,0 +1,25 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Mercadopago from "@/components/Mercadopago";
+
+const mercadoPagoCredentials = {
+  public_key: import.meta.env.PUBLIC_MERCADOPAGO_PUBLIC_KEY,
+};
+
+const productData = {
+  name: "Example Product",
+  price: 100.0, // Ensure this is a valid number
+  quantity: 1,
+  discount: 100,
+};
+---
+
+<Layout>
+  <div class="pt-16 w-8 h-2">
+    <Mercadopago
+    client:load
+    mercado_pago_credentials={mercadoPagoCredentials}
+    product_data={productData}
+  />
+  </div>
+</Layout>

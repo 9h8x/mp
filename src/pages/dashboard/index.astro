@@ -1,0 +1,9 @@
+---
+import "@/styles/globals.css";
+import DashboardLayout from "@/layouts/DashboardLayout";
+import { BentoDemo } from "@/components/dashboard/home/BentoGrid";
+---
+
+<DashboardLayout client:only='react'>
+  <BentoDemo client:load/>
+</DashboardLayout>

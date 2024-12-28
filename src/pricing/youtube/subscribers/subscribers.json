@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:04.058Z",
+  "service": "6293",
+  "name": "Youtube Subscribers [Refill: 30D] [Max: 5K] [Start Time: 0 - 3 Hrs] [Speed: Up to 100/D] 💧♻️",
+  "type": "Default",
+  "rate": "1.5525",
+  "min": "20",
+  "max": "5000",
+  "dripfeed": true,
+  "refill": true,
+  "cancel": false,
+  "category": "Youtube Subscribers"
+}

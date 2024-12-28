@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:03.348Z",
+  "service": "1976",
+  "name": "Youtube Likes [Refill: 15D] [Max: 100K] [Start Time: 0-1 Hr] [Speed: 25K/Day] 💧♻️⛔",
+  "type": "Default",
+  "rate": "0.2625",
+  "min": "10",
+  "max": "100000",
+  "dripfeed": true,
+  "refill": false,
+  "cancel": false,
+  "category": "Youtube Likes / Dislikes / Shares"
+}

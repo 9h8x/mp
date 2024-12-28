@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Meteors } from "@/components/ui/meteors";
+
+const { searchParams } = Astro.url;
+const paymentId = searchParams.get("payment_id");
+const status = searchParams.get("status");
+const merchantOrderId = searchParams.get("merchant_order_id");
+---
+
+<Layout title="Payment Pending">
+  <div class="container mx-auto max-w-2xl px-4">
+    <div class="relative">
+      <Card
+        className="shadow-lg mt-10 overflow-hidden border border-transparent relative"
+      >
+        <div class="relative z-10">
+          <CardHeader>
+            <CardTitle className="text-yellow-600">Payment Pending</CardTitle>
+            <CardDescription>
+              Your payment is currently being processed. Please check back later
+              for the status.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul
+              class="list-disc list-inside mb-4 space-y-2 text-sm text-gray-600"
+            >
+              <li>Payment ID: <span class="font-mono">{paymentId}</span></li>
+              <li>Status: <span class="font-semibold">{status}</span></li>
+              <li>
+                Merchant Order ID: <span class="font-mono"
+                  >{merchantOrderId}</span
+                >
+              </li>
+            </ul>
+          </CardContent>
+          <CardFooter className="flex gap-3">
+            <Button href="/">Return to Home</Button>
+            <Button variant="secondary" href="/support">Check Status</Button>
+          </CardFooter>
+        </div>
+        <Meteors number={20} client:load />
+      </Card>
+    </div>
+  </div>
+</Layout>

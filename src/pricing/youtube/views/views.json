@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:03.771Z",
+  "service": "5971",
+  "name": "Youtube Views [Refill: No] [HUGE DROP RATE] [Max: 10M] [Start Time: 0-2 Hours] [Speed: 50K/Day]",
+  "type": "Default",
+  "rate": "0.45",
+  "min": "1000",
+  "max": "10000000",
+  "dripfeed": false,
+  "refill": false,
+  "cancel": false,
+  "category": "Youtube Views"
+}

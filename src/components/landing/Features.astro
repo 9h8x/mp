@@ -1,0 +1,52 @@
+---
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BorderBeam } from "@/components/ui/border-beam";
+
+const features = [
+  {
+    title: "Entrega Instantánea",
+    description: "Recibe tu pedido en minutos después de la compra",
+  },
+  {
+    title: "Pagos Seguros",
+    description:
+      "Tus transacciones están protegidas con seguridad a través de nuestra plataforma",
+  },
+  {
+    title: "Garantía de Devolución de Dinero",
+    description: "¿No estás satisfecho? Te devolvemos tu dinero",
+  },
+];
+---
+
+<section class="py-0 bg-muted/50" id="faq">
+  <div class="container mx-auto px-4 pt-32">
+    <h1
+      class="text-center text-4xl md:text-4xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
+      style="background-clip: text; -webkit-background-clip: text;"
+    >
+      ¿Por qué Elegirnos?
+    </h1>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-20">
+      {
+        features.map((feature) => (
+          <Card className="relative overflow-hidden">
+            <BorderBeam
+              size={250}
+              colorFrom="#34a4eb"
+              colorTo="#7d0af7"
+              duration={10}
+              delay={0}
+            />
+            <CardHeader>
+              <CardTitle className="text-xl">{feature.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p class="text-muted-foreground">{feature.description}</p>
+            </CardContent>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

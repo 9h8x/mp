@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:04.010Z",
+  "service": "9251",
+  "name": "Youtube Views [Refill: Lifetime] [1 to 3 Mins Retention] [Max: 1M] [Start Time: 0-2 Hrs] [Speed: Up to 500/D] 💧",
+  "type": "Default",
+  "rate": "1.125",
+  "min": "100",
+  "max": "100000",
+  "dripfeed": true,
+  "refill": false,
+  "cancel": false,
+  "category": "Youtube Views [High Retention]"
+}

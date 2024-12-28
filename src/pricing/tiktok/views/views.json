@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:03.578Z",
+  "service": "2260",
+  "name": "TikTok Views [Max: 30M] [Start Time: 0-2 Hrs] [Speed: 10M/D]💧",
+  "type": "Default",
+  "rate": "0.001",
+  "min": "49",
+  "max": "30000000",
+  "dripfeed": true,
+  "refill": false,
+  "cancel": false,
+  "category": "Tiktok Views"
+}

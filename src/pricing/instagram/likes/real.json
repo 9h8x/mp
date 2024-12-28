@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:03.128Z",
+  "service": "8216",
+  "name": "Instagram Likes [Refill: NO REFILL ] [Max: 100K] [Start Time: 0-1 Hour] [Speed: 300K/Day] ⚡⛔💧",
+  "type": "Default",
+  "rate": "0.015",
+  "min": "10",
+  "max": "100000",
+  "dripfeed": true,
+  "refill": true,
+  "cancel": true,
+  "category": "Instagram Likes"
+}

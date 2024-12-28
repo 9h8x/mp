@@ -1,0 +1,72 @@
+---
+import { Button } from "@/components/ui/button";
+import Iphone15Pro from "@/components/ui/iphone-15-pro";
+import Ripple from "@/components/ui/ripple";
+import BlurFade from "@/components/ui/blur-fade";
+import { buttonVariants } from "@/components/ui/button";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+import ShimmerButton from "@/components/ui/shimmer-button";
+---
+
+<section
+  class="relative min-h-[80vh] flex items-center justify-center overflow-hidden mt-32"
+>
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-background to-background/50 z-10"
+  >
+  </div>
+  <div
+    class="container relative z-20 mx-auto px-4 flex flex-col md:flex-row items-center justify-between"
+  >
+    <div class="text-left max-w-lg">
+      <BlurFade delay={0.25} inView client:load>
+        <div
+          class="group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 w-72"
+          ,
+        >
+          <AnimatedShinyText
+            className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
+          >
+            <span>🚀 Presentando SMM Argentina</span>
+            <ArrowRightIcon
+              className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
+            />
+          </AnimatedShinyText>
+        </div>
+        <h1
+          class="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
+        >
+          Impulsa tu Presencia Social
+        </h1>
+      </BlurFade>
+      <BlurFade delay={0.5} inView client:load>
+        <p class="text-xl text-muted-foreground mb-8">
+          Consigue seguidores, likes y engagement instantáneo para tus cuentas
+          de redes sociales a precios imbatibles
+        </p>
+      </BlurFade>
+      <BlurFade delay={0.7} inView client:load>
+        <div class="flex gap-4 justify-start mb-12">
+          <a href="#faq" rel="noreferrer" class={buttonVariants()}>
+            ¿Porque Elegirnos?
+          </a>
+          <a
+            href="#pricing"
+            rel="noreferrer"
+            class={buttonVariants({ variant: "outline" })}
+          >
+            Ver Precios
+          </a>
+        </div>
+      </BlurFade>
+    </div>
+    <BlurFade delay={0.5} inView client:load>
+      <Iphone15Pro
+        className="size-[400px] md:size-[600px]"
+        src="/tiktok-mockup.png"
+      />
+      <Ripple className="-z-10" mainCircleSize={300} />
+    </BlurFade>
+  </div>
+</section>

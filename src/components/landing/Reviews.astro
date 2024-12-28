@@ -1,0 +1,93 @@
+---
+// MarqueeDemo.astro
+import { cn } from "@/lib/utils";
+import Marquee from "@/components/ui/marquee";
+import ReviewCard from "./ReviewCard.astro";
+
+const reviews = [
+  {
+    name: "Gabriela",
+    username: "@gabriela",
+    body: "Es exactamente lo que necesitaba para impulsar mis redes sociales. ¡Gracias!",
+    img: "https://randomuser.me/api/portraits/women/82.jpg",
+  },
+  {
+    name: "Miguel",
+    username: "@miguel",
+    body: "Los seguidores son reales y llegan rápido. Muy satisfecho con el servicio.",
+    img: "https://randomuser.me/api/portraits/men/33.jpg",
+  },
+  {
+    name: "Laura",
+    username: "@laura",
+    body: "Nunca pensé que sería tan fácil aumentar mis likes. Lo recomiendo totalmente.",
+    img: "https://randomuser.me/api/portraits/women/60.jpg",
+  },
+  {
+    name: "David",
+    username: "@david",
+    body: "Probé varios servicios antes, pero este es sin duda el mejor. ¡Resultados inmediatos!",
+    img: "https://randomuser.me/api/portraits/men/77.jpg",
+  },
+  {
+    name: "Elena",
+    username: "@elena",
+    body: "Si buscas más vistas en tus videos, esta página es la solución. ¡Excelente trabajo!",
+    img: "https://randomuser.me/api/portraits/women/79.jpg",
+  },
+  {
+    name: "Pablo",
+    username: "@pablo",
+    body: "La atención al cliente es fantástica, y los resultados son mejores de lo esperado.",
+    img: "https://randomuser.me/api/portraits/men/72.jpg",
+  },
+  {
+    name: "Natalia",
+    username: "@natalia",
+    body: "Desde que usé este servicio, mis publicaciones tienen más impacto. Muy feliz.",
+    img: "https://randomuser.me/api/portraits/women/50.jpg",
+  },
+  {
+    name: "Javier",
+    username: "@javier",
+    body: "Es una gran herramienta para influencers o pequeños creadores como yo. ¡Recomendado!",
+    img: "https://randomuser.me/api/portraits/men/21.jpg",
+  },
+  {
+    name: "Claudia",
+    username: "@claudia",
+    body: "Mis seguidores aumentaron más de lo esperado. Estoy muy agradecida.",
+    img: "https://randomuser.me/api/portraits/women/68.jpg",
+  },
+  {
+    name: "Roberto",
+    username: "@roberto",
+    body: "Un servicio confiable para dar el empujón inicial que necesitas en redes.",
+    img: "https://randomuser.me/api/portraits/men/71.jpg",
+  },
+];
+
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
+---
+
+<section
+  id="reviews"
+  class="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden mt-12 pt-20"
+>
+  <h1
+    class="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
+  >
+    Reseñas
+  </h1>
+  <div
+    class="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+  >
+    <Marquee className="[--duration:30s]">
+      {firstRow.map((review) => <ReviewCard {...review} />)}
+    </Marquee>
+    <Marquee reverse className="[--duration:30s]">
+      {secondRow.map((review) => <ReviewCard {...review} />)}
+    </Marquee>
+  </div>
+</section>

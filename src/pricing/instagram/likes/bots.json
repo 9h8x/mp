@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:03.006Z",
+  "service": "8464",
+  "name": "Instagram Likes [LQ] [Refill: No] [Max: 100K] [Start Time: 0 - 6 Hours] [Speed: 10K/Day] 💧⛔️",
+  "type": "Default",
+  "rate": "0.015",
+  "min": "10",
+  "max": "200000",
+  "dripfeed": true,
+  "refill": true,
+  "cancel": true,
+  "category": "Instagram Likes [BOTS]"
+}

@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:03.553Z",
+  "service": "5897",
+  "name": "Instagram Followers [MQ] [Refill: No] [Max: 1M] [Drop: ~5%] [Start Time: Instant] [Speed: 500K/Month] 💧⛔️",
+  "type": "Default",
+  "rate": "0.425",
+  "min": "50",
+  "max": "250000",
+  "dripfeed": true,
+  "refill": true,
+  "cancel": true,
+  "category": "Instagram Followers [Not Guaranteed]"
+}

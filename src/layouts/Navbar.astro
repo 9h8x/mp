@@ -1,0 +1,37 @@
+---
+import { Button } from "@/components/ui/button";
+
+const navItems = [
+  { label: "¿Porque Elegirnos?", href: "#faq" },
+  { label: "Precios", href: "#pricing" },
+  { label: "Reseñas", href: "#reviews" },
+];
+---
+
+<header
+  class="fixed top-0 w-full border-b bg-background/80 backdrop-blur-sm z-50"
+>
+  <div class="container mx-auto px-4">
+    <nav class="flex h-16 items-center justify-between">
+      <a href="/" class="text-xl font-bold"> masseguidores </a>
+
+      <div class="flex items-center gap-8">
+        <ul class="hidden md:flex items-center gap-6">
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <slot />
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,225 @@
+---
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Meteors } from "@/components/ui/meteors";
+import fs from "fs";
+import path from "path";
+
+// Function to read JSON file
+const readJsonFile = (filePath: string) => {
+  const fullPath = path.resolve(filePath);
+  const fileContent = fs.readFileSync(fullPath, "utf-8");
+  return JSON.parse(fileContent);
+};
+
+const getArsValue = (usd: number) => {
+  return usd * compraValue;
+};
+
+const fetchCompraValue = async () => {
+  const response = await fetch(
+    "http://localhost:4321/api/exchange/getCotizacion"
+  );
+  const data = await response.json();
+  return data.compra;
+};
+
+const roundUpToEven = (num: number) => {
+  if (num < 10) return Math.ceil(num / 2) * 2;
+  if (num < 100) return Math.ceil(num / 10) * 10;
+  if (num < 1000) return Math.ceil(num / 50) * 50;
+  return Math.ceil(num / 100) * 100;
+};
+
+const firstThreeDigits = (num: number) => {
+  const numStr = num.toString();
+  const [integerPart, decimalPart] = numStr.split(".");
+  if (decimalPart) {
+    return parseFloat(`${integerPart}.${decimalPart.slice(0, 2)}`);
+  }
+  return parseInt(numStr.slice(0, 2));
+};
+
+const compraValue = await fetchCompraValue();
+
+// Instagram
+const instagramFollowersGuaranteed = readJsonFile(
+  "./src/pricing/instagram/followers/guaranteed.json"
+);
+const instagramFollowersNotGuaranteed = readJsonFile(
+  "./src/pricing/instagram/followers/not-guaranteed.json"
+);
+const instagramLikesReal = readJsonFile(
+  "./src/pricing/instagram/likes/real.json"
+);
+const instagramLikesBots = readJsonFile(
+  "./src/pricing/instagram/likes/bots.json"
+);
+const instagramViews = readJsonFile("./src/pricing/instagram/views/views.json");
+
+// Tiktok
+const tiktokFollowers = readJsonFile(
+  "./src/pricing/tiktok/followers/followers.json"
+);
+const tiktokLikes = readJsonFile("./src/pricing/tiktok/likes/likes.json");
+const tiktokViews = readJsonFile("./src/pricing/tiktok/views/views.json");
+
+const youtubeSubscribers = readJsonFile(
+  "./src/pricing/youtube/subscribers/subscribers.json"
+);
+const youtubeLikes = readJsonFile("./src/pricing/youtube/likes/likes.json");
+const youtubeViewsNormal = readJsonFile(
+  "./src/pricing/youtube/views/views.json"
+);
+const youtubeViewsHighR = readJsonFile(
+  "./src/pricing/youtube/views/high-retention.json"
+);
+
+const plans = [
+  {
+    name: "Instagram",
+    services: [
+      {
+        name: "Seguidores (Garantizados)",
+        amount: "1,000",
+        priceUsd: instagramFollowersGuaranteed.rate * 1.5,
+        priceArs: getArsValue(instagramFollowersGuaranteed.rate * 1.5),
+      },
+      {
+        name: "Seguidores (Sin Garantía)",
+        amount: "1,000",
+        priceUsd: instagramFollowersNotGuaranteed.rate * 1.5,
+        priceArs: getArsValue(instagramFollowersNotGuaranteed.rate * 1.5),
+      },
+      {
+        name: "Likes",
+        amount: "1,000",
+        priceUsd: instagramLikesReal.rate * 1.5,
+        priceArs: getArsValue(instagramLikesReal.rate * 1.5),
+      },
+      {
+        name: "Vistas",
+        amount: "1,000",
+        priceUsd: instagramViews.rate * 1.5 * compraValue,
+        priceArs: getArsValue(instagramViews.rate * 1.5),
+      },
+    ],
+  },
+  {
+    name: "TikTok",
+    services: [
+      {
+        name: "Followers",
+        amount: "1,000",
+        priceUsd: tiktokFollowers.rate * 1.5,
+        priceArs: getArsValue(tiktokFollowers.rate * 1.5),
+      },
+      {
+        name: "Likes",
+        amount: "1,000",
+        priceUsd: tiktokLikes.rate * 1.5,
+        priceArs: getArsValue(tiktokLikes.rate * 1.5),
+      },
+      {
+        name: "Vistas",
+        amount: "1,000",
+        priceUsd: tiktokViews.rate * 1.5,
+        priceArs: getArsValue(tiktokViews.rate * 1.5),
+      },
+    ],
+  },
+  {
+    name: "Youtube",
+    services: [
+      {
+        name: "Subscriptores",
+        amount: "1,000",
+        priceUsd: youtubeSubscribers.rate * 1.5,
+        priceArs: getArsValue(youtubeSubscribers.rate * 1.5),
+      },
+      {
+        name: "Likes",
+        amount: "1,000",
+        priceUsd: youtubeLikes.rate * 1.5,
+        priceArs: getArsValue(youtubeLikes.rate * 1.5),
+      },
+      {
+        name: "Vistas (Normales)",
+        amount: "1,000",
+        priceUsd: youtubeViewsNormal.rate * 1.5,
+        priceArs: getArsValue(youtubeViewsNormal.rate * 1.5),
+      },
+      {
+        name: "Vistas (Retencion Alta)",
+        amount: "1,000",
+        priceUsd: youtubeViewsHighR.rate * 1.5,
+        priceArs: getArsValue(youtubeViewsHighR.rate * 1.5),
+      },
+    ],
+  },
+  // Add other platforms here if needed
+];
+---
+
+<section id="pricing"
+  class="relative min-h-[80vh] flex items-center justify-center overflow-hidden mt-32 pt-32"
+>
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-background to-background/50 z-10"
+  >
+  </div>
+  <div class="container relative z-20 mx-auto px-4">
+    <div class="text-center max-w-6xl mx-auto">
+      <h1
+        class="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
+      >
+        Precios
+      </h1>
+      <h2
+        class="text-xl md:text-xl font-bold tracking-tight mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
+      >
+        Precio por 1000 unidades (compra minima de ARS$500)
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          plans.map((plan) => (
+            <Card className="relative overflow-hidden flex flex-col h-full">
+              <Meteors number={10} client:load />
+              <CardHeader>
+                <CardTitle className="text-2xl">{plan.name}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <ul class="space-y-4">
+                  {plan.services.map((service) => (
+                    <li class="flex justify-between items-center">
+                      <span>{service.name}</span>
+                      <span class="font-bold">
+                        ARS${roundUpToEven(service.priceArs)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter className="mt-auto">
+                <Button className="w-full">Comprar Ahora</Button>
+              </CardFooter>
+            </Card>
+          ))
+        }
+      </div>
+      <div class="col-span-1 md:col-span-3 text-center mt-2 mb-4">
+        <p class="text-muted-foreground">
+          ¿No encuentras el producto que quieres?
+          <br />
+          Dentro de la zona de clientes puedes solicitar un nuevo producto.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

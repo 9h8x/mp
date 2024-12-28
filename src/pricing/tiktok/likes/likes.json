@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:03.426Z",
+  "service": "9297",
+  "name": "TikTok Likes [Refill: No] [Max: 100K] [Start Time: 0 - 1 Hr] [Speed: Up to 100K/D] 💧⛔️",
+  "type": "Default",
+  "rate": "0.0663",
+  "min": "10",
+  "max": "100000",
+  "dripfeed": true,
+  "refill": false,
+  "cancel": true,
+  "category": "Tiktok Likes"
+}

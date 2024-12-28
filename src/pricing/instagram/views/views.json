@@ -1,0 +1,13 @@
+{
+  "ran time": "2024-12-27T23:15:03.207Z",
+  "service": "6454",
+  "name": "Instagram Views [All Videos] [Max: 100M] [Start Time: 0 - 1 Hours] [Speed: 20M/Day] ⚡💧⛔",
+  "type": "Default",
+  "rate": "0.0057",
+  "min": "100",
+  "max": "100000000",
+  "dripfeed": true,
+  "refill": false,
+  "cancel": false,
+  "category": "Instagram Views"
+}

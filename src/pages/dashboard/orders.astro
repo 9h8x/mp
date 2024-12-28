@@ -1,0 +1,9 @@
+---
+import "@/styles/globals.css";
+import DashboardLayout from "@/layouts/DashboardLayout";
+import OrderTable from "@/components/dashboard/orders/orderTable";
+---
+
+<DashboardLayout client:only="react">
+  <OrderTable />
+</DashboardLayout>
